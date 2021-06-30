@@ -1019,7 +1019,7 @@ class Mega:
         unencrypted_attrs = decrypt_attr(base64_url_decode(data['at']), k)
         if not unencrypted_attrs:
             return None
-        result = {'size': size, 'name': unencrypted_attrs['n']}
+        result = size + "|" + unencrypted_attrs['n']
         return result
 
     def import_public_file(self,
